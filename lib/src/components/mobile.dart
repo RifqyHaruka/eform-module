@@ -15,7 +15,7 @@ Future<void> saveAndLaunchFile(List<int> bytes, String fileName) async {
 
   print('Save as file ${file.path} ...');
   await file.writeAsBytes(bytes, mode: FileMode.append);
-  await OpenFile.open(file.path);
+  await OpenPdf().openFile(file: file);
 }
 
 Future<void> downloadDirectory(List<int> bytes, String filename) async {
@@ -23,24 +23,10 @@ Future<void> downloadDirectory(List<int> bytes, String filename) async {
   downloadsDirectory = (await DownloadsPathProvider.downloadsDirectory)!;
   final appDocPath = '${downloadsDirectory.path}/$filename.pdf';
   print('${appDocPath}');
-  // final file = File(appDocPath + '/' + datetime + '-$filename.pdf');
-  // print('Save as file ${file.path} ...');
-
-  // final directory = await getApplicationDocumentsDirectory();
-  // final path = '${directory.path}/$filename.pdf';
-  // final file = File(appDocPath + '/' + datetime + '-$filename.pdf');
-  // final file = File(path);
   final fileDownload = File(appDocPath);
 
   // await file.writeAsBytes(bytes, mode: FileMode.append);
   await fileDownload.writeAsBytes(bytes, mode: FileMode.append);
   var result = await OpenPdf().openPDF(path: appDocPath);
   Get.to(result);
-
-  // final AndroidIntent intent = AndroidIntent(
-  //     action: 'action_view',
-  //     data: Uri.encodeFull(file.path),
-  //     type: "application/pdf");
-  // await intent.launch();
-  // await OpenFile.open(file.path);
 }
