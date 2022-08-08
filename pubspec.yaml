@@ -81,7 +81,7 @@ dependencies:
   # image_cropper: ^1.4.0
 
   # Get current device information from within the Flutter application.
-  device_info_plus: 2.1.0
+
 
   # plugin for info IP ADRESS
   dart_ipify: 1.1.0
@@ -166,6 +166,10 @@ dependencies:
       url: https://gitlab+deploy-token-4:r2ZJ-uSdsfxjnTNYbFAB@code.digi46.id/eformdigi46/flutter-package/deviceinfo.git
       ref : 0.0.1
   gallery_saver: ^2.3.2
+  open_pdf:
+    git:
+      url: https://gitlab+deploy-token-6:tQUUE82x-yzG1x51Z6uS@code.digi46.id/eformdigi46/flutter-package/open_pdf.git
+      ref : 0.0.1
 
 dev_dependencies:
   flutter_test:

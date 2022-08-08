@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:device_info_plus/device_info_plus.dart';
+// import 'package:device_info_plus/device_info_plus.dart';
 import 'package:eform_modul/src/components/Global.dart';
 import 'package:eform_modul/src/components/alert-dialog-new-wrap.dart';
 import 'package:eform_modul/src/components/label-text.dart';
@@ -133,15 +133,15 @@ class DataController extends GetxController {
     return header;
   }
 
-  Future<String?> deviceUnixId() async {
-    try {
-      final deviceInfoPlugin = DeviceInfoPlugin();
-      final deviceInfo = await deviceInfoPlugin.iosInfo;
-      return deviceInfo.identifierForVendor ?? "xxxx-xxxx-xxxx";
-    } catch (e) {
-      return "device unix not found";
-    }
-  }
+  // Future<String?> deviceUnixId() async {
+  //   try {
+  //     final deviceInfoPlugin = DeviceInfoPlugin();
+  //     final deviceInfo = await deviceInfoPlugin.iosInfo;
+  //     return deviceInfo.identifierForVendor ?? "xxxx-xxxx-xxxx";
+  //   } catch (e) {
+  //     return "device unix not found";
+  //   }
+  // }
 
   CreateAccountModel createAccountModel = CreateAccountModel.fromJson({
     "refNum": "20220222135959023614",
@@ -336,7 +336,8 @@ class DataController extends GetxController {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Center(
-                      child: SvgPicture.asset('assets/images/icons/time_icon.svg'),
+                      child:
+                          SvgPicture.asset('assets/images/icons/time_icon.svg'),
                     ),
                     SizedBox(
                       height: 8,
@@ -387,8 +388,10 @@ class DataController extends GetxController {
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Text('Pembukaan Tabungan Digital BNI Hanya Berlaku Untuk Nasabah Baru',
-                      textAlign: TextAlign.center, style: PopUpTitle),
+                  child: Text(
+                      'Pembukaan Tabungan Digital BNI Hanya Berlaku Untuk Nasabah Baru',
+                      textAlign: TextAlign.center,
+                      style: PopUpTitle),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.015,
@@ -430,22 +433,31 @@ class DataController extends GetxController {
                                 SizedBox(
                                   height: Get.height * 0.01,
                                 ),
-                                Text('Untuk Kelancaran Pembukaan Tabungan, Siapkan Dahulu:',
-                                    textAlign: TextAlign.center, style: PopUpTitle),
+                                Text(
+                                    'Untuk Kelancaran Pembukaan Tabungan, Siapkan Dahulu:',
+                                    textAlign: TextAlign.center,
+                                    style: PopUpTitle),
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.height * 0.015,
+                                  height: MediaQuery.of(context).size.height *
+                                      0.015,
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8.0),
                                       child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * 0.22,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.22,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               SizedBox(
                                                 width: 60,
@@ -456,9 +468,13 @@ class DataController extends GetxController {
                                           )),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8.0),
                                       child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * 0.22,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.22,
                                           child: Column(
                                             children: [
                                               SizedBox(
@@ -470,9 +486,13 @@ class DataController extends GetxController {
                                           )),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8.0),
                                       child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * 0.22,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.22,
                                           child: Column(
                                             children: [
                                               SizedBox(
@@ -486,16 +506,23 @@ class DataController extends GetxController {
                                   ],
                                 ),
                                 Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 5),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 8.0),
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
                                           child: SizedBox(
-                                            width: MediaQuery.of(context).size.width * 0.22,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.22,
                                             child: Text(
                                               'E-KTP (wajib) & NPWP (bila ada)',
                                               style: infoStyle,
@@ -503,9 +530,13 @@ class DataController extends GetxController {
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 8.0),
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
                                           child: SizedBox(
-                                              width: MediaQuery.of(context).size.width * 0.21,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.21,
                                               child: Text(
                                                 'Pulsa/paket data untuk pengiriman OTP',
                                                 style: infoStyle,
@@ -513,9 +544,13 @@ class DataController extends GetxController {
                                               )),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 8.0),
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
                                           child: SizedBox(
-                                              width: MediaQuery.of(context).size.width * 0.21,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.21,
                                               child: Text(
                                                 'Kertas & Alat Tulis',
                                                 style: infoStyle,
@@ -525,7 +560,8 @@ class DataController extends GetxController {
                                       ],
                                     )),
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.height * 0.022,
+                                  height: MediaQuery.of(context).size.height *
+                                      0.022,
                                 ),
                                 ButtonCostum(
                                   // margin: EdgeInsets.symmetric(horizontal: 15,),
@@ -552,10 +588,12 @@ class DataController extends GetxController {
                     padding: const EdgeInsets.only(top: 16, bottom: 16),
                     margin: EdgeInsets.symmetric(horizontal: 16),
                     child: Center(
-                      child: Text('Lanjutkan Proses Pembukaan Rekening', style: buttonStyle),
+                      child: Text('Lanjutkan Proses Pembukaan Rekening',
+                          style: buttonStyle),
                     ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: CustomThemeWidget.orangeButton),
+                        border:
+                            Border.all(color: CustomThemeWidget.orangeButton),
                         color: CustomThemeWidget.orangeButton,
                         borderRadius: BorderRadius.circular(4)),
                   ),
